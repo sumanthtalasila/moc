@@ -5,14 +5,6 @@ pipeline {
         pollSCM('* * * * *')
     }
     stages {
-        stage('checkout') {
-            
-            steps {
-                git url: 'https://github.com/sumanthtalasila/moc.git',branch:'main'
-               
-            }
-        }
-
         stage('build') {
             steps {
                  bat 'mvn clean package'
